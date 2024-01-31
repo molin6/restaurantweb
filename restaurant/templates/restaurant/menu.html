@@ -1,3 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'restaurant/css/menu.css' %}">
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.body.style.opacity = '1';
+    });
+</script>
+
 {% block content %}
     <h1>Our Menu</h1>
     {% for entry in menu_data %}

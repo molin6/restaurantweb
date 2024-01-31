@@ -1,1 +1,50 @@
-yuh
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="{% static 'restaurant/css/navbar.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<script>
+    function fadeToPage(url) {
+        const body = document.body;
+        body.style.transition = 'opacity 0.8s ease-out';
+        body.style.opacity = '0';
+
+        setTimeout(() => window.location.href = url, 800);
+    }
+</script>
+
+<body>
+
+    <!-- Home Panel -->
+    <div class="panel" id="home">
+        <h1>Pure CSS Panels</h1> 
+    </div>
+
+    <!-- Slice Panel -->
+    <div class="panel" id="slice">
+        <div class="panel__content">
+            <a href="#home">Close me.</a>
+        </div>
+    </div>
+
+    <!-- Fade Panel -->
+    <div class="panel" id="fade">
+        <div class="panel__content">
+            <a href="#home">Close me.</a>
+        </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="menu">
+        <a class="menu__link" onclick="fadeToPage('/');" data-hover="home">Home</a>
+        <a class="menu__link" onclick="fadeToPage('/menu/');" data-hover="Menu">Menu</a>
+    </div>
+
+</body>
+</html>
