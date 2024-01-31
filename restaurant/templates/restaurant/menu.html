@@ -1,0 +1,17 @@
+{% block content %}
+    <h1>Our Menu</h1>
+    {% for entry in menu_data %}
+        <h2>{{ entry.section.name }}</h2>
+        <p>{{ entry.section.description }}</p>
+        <ul>
+            {% for item in entry.items %}
+                <li>
+                    {{ item.name }} - ${{ item.price }}
+                    <p>{{ item.description }}</p>
+                </li>
+            {% empty %}
+                <li>No items in this section.</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
