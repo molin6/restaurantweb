@@ -1,0 +1,7 @@
+.env
+env/
+prod/
+restaurant/__pycache__/
+restaurantweb/__pycache__/
+restaurant/migrations/
+db.sqlite3

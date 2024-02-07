@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,12 +77,30 @@ WSGI_APPLICATION = 'restaurantweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Load environment variables from .env file
+load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# ...
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': os.getenv('DATABASES.default.ENGINE'),
+        'NAME': os.getenv('DATABASES.default.NAME'),
+        'USER': os.getenv('DATABASES.default.USER'),
+        'PASSWORD': os.getenv('DATABASES.default.PASSWORD'),
+        'HOST': os.getenv('DATABASES.default.HOST'),
+        'PORT': os.getenv('DATABASES.default.PORT', ''),
+        'OPTIONS': {
+            'driver': os.getenv('DATABASES.default.OPTIONS.driver'),
+            # Additional options can be added here if required
+        },
+    },
 }
+
+
+
 
 
 # Password validation
