@@ -21,13 +21,16 @@ body {
 
 .landing-header {
     text-align: center;
-    padding: 5vh 0; /* Use viewport height for dynamic spacing */
-    background-image: linear-gradient(to bottom, var(--header-bg-color), var(--header-bg-color)), url('restaurant/images/landing_bg.jpg');
+    padding: 5vh 0; /* Adjust as needed */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('restaurant/images/steak.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     color: white;
-    margin-bottom: 2em; /* Adds space below the header */
+    margin-bottom: 2em;
 }
+
+
+
 
 .landing-nav {
     display: flex;
@@ -51,6 +54,24 @@ body {
     color: var(--background-color);
 }
 
+/* Hover effect for navigation links */
+.menu-button:hover, .scroll-to-about:hover {
+    color: var(--background-color);
+    background-color: var(--text-color);
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Animation for social icons */
+.social-icon:hover {
+    transform: translateY(-5px); /* Already included, emphasizing the hover effect */
+}
+
+/* Adding a transition effect for smoother animation */
+.menu-button, .scroll-to-about, .social-icon {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
 .restaurant-title {
     margin: 0;
     font-size: 4em; /* Larger font size for title */
@@ -59,11 +80,27 @@ body {
 
 .about-section {
     text-align: center;
-    padding: 6em 2em; /* Increased padding for more space */
+    padding: 6em 2em;
     background-color: var(--accent-color);
     color: white;
-    margin: auto 0; /* Helps to push footer to the bottom */
+    margin: auto 0;
+    border: 1px solid #d2b48c; /* Adds a subtle gold border */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a subtle shadow for depth */
 }
+
+
+.about-section h2 {
+    font-size: 2.5rem; /* Larger font size for section heading */
+    color: #fff; /* Ensures high contrast against the dark background */
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.2rem; /* Adjusts font size for readability */
+    max-width: 800px; /* Optimizes line length for reading */
+    margin: auto; /* Centers the text block */
+}
+
 
 .footer {
     background-color: var(--background-color);
@@ -87,20 +124,32 @@ body {
     transition: transform 0.2s ease;
 }
 
+/* Enhanced social icons with potential for SVG or font icons */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Fixed size for icons */
+    height: 40px; /* Fixed size for icons */
+}
+
+
 .social-icon:hover {
     transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
-    .landing-nav {
-        flex-direction: column;
+    .landing-header {
+        padding: 5vh 0; /* Reduce the top and bottom padding as necessary */
     }
 
-    .landing-header {
-        padding: 20vh 0; /* Increased padding for a more dramatic look on mobile */
+    .landing-nav {
+        padding-bottom: 10px; /* Reduced padding */
+        flex-direction: column; /* Stack the items if there are more in the future */
     }
 
     .restaurant-title {
-        font-size: 3em; /* Adjusted for mobile screens */
+        font-size: 2.5em; /* Smaller font size for mobile */
+        padding: 0 10px; /* Adjust padding as needed */
     }
 }
