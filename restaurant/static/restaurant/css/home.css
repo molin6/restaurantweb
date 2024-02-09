@@ -1,0 +1,106 @@
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #d2b48c;
+    --accent-color: #292929;
+    --button-bg-color: #333;
+    --font-family: 'Merriweather', serif;
+    --header-bg-color: rgba(26, 26, 26, 0.85); /* Semi-transparent black */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.8s ease-in;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.landing-header {
+    text-align: center;
+    padding: 5vh 0; /* Use viewport height for dynamic spacing */
+    background-image: linear-gradient(to bottom, var(--header-bg-color), var(--header-bg-color)), url('restaurant/images/landing_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin-bottom: 2em; /* Adds space below the header */
+}
+
+.landing-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.menu-button, .scroll-to-about {
+    background-color: var(--button-bg-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px; /* Increased padding for larger buttons */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem; /* Larger font size for better readability */
+}
+
+.menu-button:hover, .scroll-to-about:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.restaurant-title {
+    margin: 0;
+    font-size: 4em; /* Larger font size for title */
+    padding: 0 20px; /* Adds padding to handle narrow screens */
+}
+
+.about-section {
+    text-align: center;
+    padding: 6em 2em; /* Increased padding for more space */
+    background-color: var(--accent-color);
+    color: white;
+    margin: auto 0; /* Helps to push footer to the bottom */
+}
+
+.footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2em 0;
+    margin-top: auto; /* Ensures footer is at the bottom */
+}
+
+.social-links {
+    margin-bottom: 1em;
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 15px; /* Increased padding for larger touch targets */
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .landing-nav {
+        flex-direction: column;
+    }
+
+    .landing-header {
+        padding: 20vh 0; /* Increased padding for a more dramatic look on mobile */
+    }
+
+    .restaurant-title {
+        font-size: 3em; /* Adjusted for mobile screens */
+    }
+}

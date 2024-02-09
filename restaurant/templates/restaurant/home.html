@@ -1,50 +1,41 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-    <link rel="stylesheet" href="{% static 'restaurant/css/navbar.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <title>Elegant Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restaurant/css/home.css' %}">
 </head>
-<script>
-    function fadeToPage(url) {
-        const body = document.body;
-        body.style.transition = 'opacity 0.8s ease-out';
-        body.style.opacity = '0';
-
-        setTimeout(() => window.location.href = url, 800);
-    }
-</script>
-
 <body>
-
-    <!-- Home Panel -->
-    <div class="panel" id="home">
-        <h1>Pure CSS Panels</h1> 
-    </div>
-
-    <!-- Slice Panel -->
-    <div class="panel" id="slice">
-        <div class="panel__content">
-            <a href="#home">Close me.</a>
+    <header class="landing-header">
+        <nav class="landing-nav">
+            <a href="/menu" class="menu-button">View Menu</a>
+            <a href="#about" class="scroll-to-about">About Us</a>
+        </nav>
+        <h1 class="restaurant-title">Elegant Restaurant</h1>
+    </header>
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+    <footer class="footer">
+        <div class="social-links">
+            <!-- Icons can be replaced with actual images or SVGs -->
+            <a href="http://facebook.com" class="social-icon">FB</a>
+            <a href="http://instagram.com" class="social-icon">IG</a>
+            <a href="http://twitter.com" class="social-icon">TW</a>
         </div>
-    </div>
-
-    <!-- Fade Panel -->
-    <div class="panel" id="fade">
-        <div class="panel__content">
-            <a href="#home">Close me.</a>
-        </div>
-    </div>
-
-    <!-- Navigation Menu -->
-    <div class="menu">
-        <a class="menu__link" onclick="fadeToPage('/');" data-hover="Home">Home</a>
-        <a class="menu__link" onclick="fadeToPage('/menu/');" data-hover="Menu">Menu</a>
-    </div>
-
+        <p>Contact us: info@elegantrestaurant.com</p>
+    </footer>
+<script>
+    document.querySelector('.scroll-to-about').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
 </body>
 </html>
