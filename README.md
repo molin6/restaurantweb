@@ -1,77 +1,89 @@
 # Restaurant Web Application
+This project is a web application for restaurant management and browsing. It utilizes Python and integrates with SQL Server for data management, including handling menus.
 
-## Overview
+# Deploying the VM on Azure
 
-This project is a web application for restaurant management and browsing. It utilizes Python 3.9.0 and integrates with SQL Server for data management, including handling menus, customer reviews, and reservations.
+## Marketplace Selection
+- In the marketplace, find SQL Server 2022 on Windows Server 2022 and choose the free SQL license version using SQL Server 2022 Developer.
 
-## Prerequisites
+## VM Size
+- Select Standard B2s (2 vCPUs, 4 GiB memory).
 
-- Python 3.9.0: Essential for compatibility with the project's dependencies.
-- SQL Server: Used for database storage and management.
+## Authentication
+- Set up a username and password (important to remember): Example: Username: RestaurantWebAdmin, Password: RestaurantAdmin1!
 
-## Installation
+## Disks
+- OS disk type: Standard HDD
 
-1. **Clone the Repository**
+## Network Settings
+- Enable inbound ports for HTTP & RDP.
 
-    ```bash
-    git clone https://github.com/molin6/restaurantweb.git
-    ```
+## Management
+- Enable Auto Shutdown.
 
-2. **Navigate to Project Directory**
+## SQL Server Settings
+- Set Connectivity to Private within the virtual network, Port: 1433.
+- Storage: CHANGE TO 8GiB for both Data Storage and Local Storage
+- Enable SQL Authentication.
 
-    ```bash
-    cd restaurantweb
-    ```
+## Add a tag
+- Enter your name as the tag
 
-3. **Install Dependencies**
+## Create the VM
+- This could take a while. If it takes longer than expected, check the Azure dashboard.
 
-    Ensure you're using Python 3.9.0 for this project:
+# Connecting to the VM
+- Go to "Connect" and download the RDP file, then open it. Ignore any trust warnings.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+# Once Logged In
+- Confirm any prompts to trust the network.
+- Install the latest versions of **Git** and **Python** from their official websites.
 
-## Database Setup
+# Setting Up SQL Server
+1. **Open SQL Server Configuration Manager**
+   - Navigate to SQL server network configuration and enable all protocols for MSSQLSERVER.
 
-1. **Environment Configuration**
+2. **Restart SQL Server**
+   - Restart the SQL Server service, usually named SQL Server(MSSQLSERVER).
 
-    Configure your database connection by setting environment variables. Create a `.env` file in the project root and define the following variables:
-    
-    ```
-    DATABASE_URL="Your_SQL_Server_Connection_String"
-    ```
+3. **Open SQL Server Management Studio**
+   - Log in using Windows authentication, right-click on the server (at the top of the list), go to properties → Security, and change to SQL Server and Windows Authentication mode. Click OK. If this is already done, skip this step.
 
-2. **Make Migrations**
+# Setting Up the Database
+1. **In SQL Server Management Studio**
+   - Create a database and a login with SQL Server Authentication. Assign the sysadmin role and map the user to your database with db_owner role.
 
-    Generate the database schema:
+# Setting Up the Website
+1. **Open GitBash**
+   - Use `cd` and `ls` to navigate. Clone the repository and navigate into it. Install requirements from `requirements.txt`.
 
-    ```bash
-    python manage.py makemigrations
-    ```
+2. **Testing the Setup**
+   - Run `python manage.py runserver` and navigate to `localhost:8000` in the browser.
 
-3. **Migrate**
+# Adding Credentials to the Webapp
+- Rename `.env.sample` to `.env` and input your database name, username, and password. Leave the Port field blank.
 
-    Apply migrations to the database:
+# Finalizing Database Setup
+1. **Migrate Database Schema**
+   - Use `python manage.py makemigrations` and `python manage.py migrate` to apply the schema.
 
-    ```bash
-    python manage.py migrate
-    ```
+2. **Populating the Database**
+   - Load the menu data with `python manage.py loaddata menu_data.json`.
 
-4. **Load Initial Data (Optional)**
+# Making the Website Public
 
-    If you have initial data to load into the database:
+## In the VM
+- Configure Windows Defender Firewall to allow inbound rules for all local ports.
 
-    ```bash
-    python manage.py loaddata <fixture_name>
-    ```
+## In the Azure Dashboard
+- Add a new inbound security rule in the Network Security Group to allow traffic on port 8000.
 
-## Running the Application
+## Running the Server
+- Run `python manage.py runserver 0.0.0.0:8000` in the VM.
 
-Start the web server:
+## Accessing the Website
+- Use the VM's public IP address followed by `:8000` to access the website from anywhere.
 
-```bash
-python manage.py runserver
-```
 # License
 
 This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International Public License (CC BY-NC 4.0).
