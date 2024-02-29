@@ -15,4 +15,4 @@ Now that you have experienced the Azure platform it's time to dig deep and explo
 
 ### Become an expert on another area of Azure
 - **Azure Security**: Research and describe how to secure an Azure environment.  Include information on how to secure a virtual machine, a web application, and a database.
-- Pick a learning path in the [Azure Learning Paths](https://docs.microsoft.com/en-us/learn/azure/) and complete it.  Report out  on what you learned and how you could apply it to a real-world scenario.
+- Pick a learning path in the [Azure Learning Paths](https://docs.microsoft.com/en-us/learn/azure/) and complete it.  Report out  on what you learned and how you could apply it to a real-world scenario.  If you choose this option, you should complete the entire learning path and not just a single module.
