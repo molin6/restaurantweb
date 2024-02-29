@@ -87,7 +87,7 @@ At this point we need to set up the website.  We will need to download the repos
 
 # Submission
 Your submission is two-fold.  
-1. Submit a screenshot showing the webpage in a browser.  **Be sure it includes the URL in the address bar.**![alt text](image.png)
-2. Submit an export of the Azure Resource Group.  This can be done by going to the Resource Group in the Azure Portal, clicking on 'Resource Visualizer', and then clicking on 'Export'.  This will give you the choice of format, any of which is acceptable.![screenshot of resource group](image-1.png)
+1. Submit a screenshot showing the webpage in a browser.  **Be sure it includes the URL in the address bar.**![alt text](A1-Submission-1.png)
+2. Submit an export of the Azure Resource Group.  This can be done by going to the Resource Group in the Azure Portal, clicking on 'Resource Visualizer', and then clicking on 'Export'.  This will give you the choice of format, any of which is acceptable.![screenshot of resource group](A1-Submission-2.png)
 3. BE SURE TO DELETE YOUR RESOURCE GROUP WHEN YOU ARE DONE!  You don't want to incur any fees
 
