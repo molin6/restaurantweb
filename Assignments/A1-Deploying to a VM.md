@@ -16,7 +16,15 @@ You will need an Azure account and tenant.  You can sign up for a free account a
 
 ## Hints:
 ### Creating the Virtual Machine
-- In the marketplace, find SQL Server 2022 on Windows Server 2022 and choose the free SQL license version using SQL Server 2022 Developer.
+We'll start by creating a virtual machine.  We are not going to cover every single step and decision along the way, but we will cover the most important ones.  You will need to make some decisions along the way based on what you have learned already.  *IMPORTANT*: If you are using the Student Services you will find the template in a different location than if you in a full-fledged pay-as-you-go Azure account.
+
+**Student Services:**
+- In the Azure Portal, go to the SQL Virtual Machines and then select Free SQL Server License: SQL Server 2022 Developer on Windows Server 2022. Then follow the prompts to create the VM, using the hints below.
+
+**Pay-As-You-Go:**
+- In the marketplace, find SQL Server 2022 on Windows Server 2022 and choose the free SQL license version using SQL Server 2022 Developer. Then follow the prompts to create the VM, using the hints below.
+  
+#### VM Settings
   - Select a small VM size, but not too small (since this application is not expected to have a lot of traffic).  A D2s_v3 with 2 vCPUs and 8 GB RAM should be sufficient.
   - Ensure that you are picking Standard HDD for the OS disk type (and a very small size, like 32GB).
   - Enable inbound ports for HTTP and RDP. (80 and 3389)
