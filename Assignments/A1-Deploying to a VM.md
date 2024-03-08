@@ -68,7 +68,7 @@ At this point we need to set up the website.  We will need to download the repos
 
 ### Making the Website Public
 **In the VM:**
-- Configure Windows Defender Firewall to allow inbound rules for port 8000.
+- Configure Windows Defender Firewall(Advanced Settings) to allow inbound rules for port 8000.
 - This is a new inbound security rule in the Network Security Group to allow traffic on port 8000.
 
 **In the Azure Portal:**
