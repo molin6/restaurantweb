@@ -2,7 +2,7 @@
 In this assignment, you are going to deploy a virtual machine on Azure and set up a web server with a database. The web server will be running a Django application and the database will be running SQL Server.  This is an example of Infrastructure as a Service (IaaS) deployment, because we are going to take responsibility for the operating system and the software running on it, including the web server and the database.  In subsequent assignments, we will look at Platform as a Service (PaaS) deployments, where the cloud provider takes responsibility for the operating system and the software running on it, and we only need to worry about the application code.
 
 ## Prerequisites
-You will need an Azure account and tenant.  You can sign up for a free account at [https://azure.microsoft.com/en-us/free/](https://azure.microsoft.com/en-us/free/).  Additionally, you will need to get the code from the repository at [https://github.com/MLDERES/ISYS5333].  Use the Assignment 1 branch.
+You will need an Azure account and tenant.  You can sign up for a free account at [https://azure.microsoft.com/en-us/free/](https://azure.microsoft.com/en-us/free/).  Additionally, you will need to get the code from the repository at [https://github.com/MLDERES/ISYS5333].
 
 ## Instructions
 1. Create a new virtual machine on Azure.
