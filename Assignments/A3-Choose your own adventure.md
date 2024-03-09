@@ -9,7 +9,9 @@ Now that you have experienced the Azure platform it's time to dig deep and explo
 - **Azure Machine Learning**: Create a machine learning model that predicts the price of a house based on a set of features.  Deploy the model as a web service and create a web application that uses the model to predict the price of a house.
   
 ### Deploy the web app in a different way
-- Take the app we deployed in class and deploy it again but using a different method.  For instance, try deploying it by using SQL as a managed service.
+- Take the app we deployed in class and deploy it again but using a different method.  For instance,
+  - Try deploying it by using SQL as a managed service.
+  - Run the SQL Server as a separate VM from the web app.
 - Deploy the app using a different database.  For instance, try deploying it using CosmosDB.
 - Using one of the existing deployment approaches, try deploying using Bicep or Terraform.
 
