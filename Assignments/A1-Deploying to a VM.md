@@ -46,6 +46,7 @@ After creating the VM, you will need to connect to it using RDP and install the 
 Once the setup is complete you can connect to it using RDP and install the latest version of Python from their official websites.
 - Confirm any prompts to trust the network.
 - Install the latest versions of **Python** from their official website (python.org).
+- **On the main installation screen ensure that you select, add Python.exe to the system path**
 
 #### Setting Up SQL Server
 1. Open SQL Server Configuration Manager and enable all protocols for MSSQLSERVER.
