@@ -37,7 +37,8 @@ Now that the VM is setup, we need to configure SQL Server to allow remote connec
 
 - Set Connectivity to Private within the virtual network, Port: 1433.
 - Enable SQL Authentication.
-- Storage: **CHANGE TO 8GiB for both Data Storage and Local Storage**.  Select 'Change Configuration' from the Storage section of the SQL Server settings.
+- Storage: **CHANGE TO 8GiB for both Data Storage and Log Storage**.  Select 'Change Configuration' from the Storage section of the SQL Server settings.
+  - You may also choose 'Share the drive for log files and data files' if you wish.
 
 ### Connecting to the VM
 #### Installing the latest version of Python
