@@ -16,7 +16,15 @@ You will need an Azure account and tenant.  You can sign up for a free account a
 
 ## Hints:
 ### Creating the Virtual Machine
-- In the marketplace, find SQL Server 2022 on Windows Server 2022 and choose the free SQL license version using SQL Server 2022 Developer.
+We'll start by creating a virtual machine.  We are not going to cover every single step and decision along the way, but we will cover the most important ones.  You will need to make some decisions along the way based on what you have learned already.  *IMPORTANT*: If you are using the Student Services you will find the template in a different location than if you in a full-fledged pay-as-you-go Azure account.
+
+**Student Services:**
+- In the Azure Portal, go to the SQL Virtual Machines and then select Free SQL Server License: SQL Server 2022 Developer on Windows Server 2022. Then follow the prompts to create the VM, using the hints below.
+
+**Pay-As-You-Go:**
+- In the marketplace, find SQL Server 2022 on Windows Server 2022 and choose the free SQL license version using SQL Server 2022 Developer. Then follow the prompts to create the VM, using the hints below.
+  
+#### VM Settings
   - Select a small VM size, but not too small (since this application is not expected to have a lot of traffic).  A D2s_v3 with 2 vCPUs and 8 GB RAM should be sufficient.
   - Ensure that you are picking Standard HDD for the OS disk type (and a very small size, like 32GB).
   - Enable inbound ports for HTTP and RDP. (80 and 3389)
@@ -29,7 +37,8 @@ Now that the VM is setup, we need to configure SQL Server to allow remote connec
 
 - Set Connectivity to Private within the virtual network, Port: 1433.
 - Enable SQL Authentication.
-- Storage: **CHANGE TO 8GiB for both Data Storage and Local Storage**.  Select 'Change Configuration' from the Storage section of the SQL Server settings.
+- Storage: **CHANGE TO 8GiB for both Data Storage and Log Storage**.  Select 'Change Configuration' from the Storage section of the SQL Server settings.
+  - You may also choose 'Share the drive for log files and data files' if you wish.
 
 ### Connecting to the VM
 #### Installing the latest version of Python
@@ -37,7 +46,8 @@ After creating the VM, you will need to connect to it using RDP and install the 
 
 Once the setup is complete you can connect to it using RDP and install the latest version of Python from their official websites.
 - Confirm any prompts to trust the network.
-- Install the latest versions of **Python** from their official website (python.org). During Installation select Add python.exe to PATH.
+- Install the latest versions of **Python** from their official website (python.org).
+- **On the main installation screen ensure that you select, add Python.exe to the system path**
 
 #### Setting Up SQL Server
 1. Open SQL Server Configuration Manager and enable all protocols for MSSQLSERVER.
